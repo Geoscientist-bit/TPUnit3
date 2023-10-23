@@ -1,3 +1,5 @@
+Elaborado por: Jhon Edison Muñoz
+
 Los ejercicios que fueron seleccionados son:
 
 -CalculaAreaTriangulo5

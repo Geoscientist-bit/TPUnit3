@@ -1,4 +1,5 @@
 package org.example.ejercicios;
+//@author jhon Edison Muñoz
 
 public class CalculaAreaTriangulo5
 {
