@@ -1,0 +1,39 @@
+Los ejercicios que fueron seleccionados son:
+
+-CalculaAreaTriangulo5
+-Facturaciom3
+
+en la clase CalculaAreaTriangulo5 se crearón dos metodos uno para calcular el area del triangulo y otro para mostrar los
+datos del triangulo, esto con el objetivo de optimizar el codigo ya que si se decide calcular 20 triangulos se tendría
+que crear 20 veces estas lineas:
+                        double valor_area_triangulo = 0D;
+                        double baseTriangulo = triangulo.base();
+                        double alturaTriangulo = triangulo.altura();
+                        valor_area_triangulo =  0.5 * baseTriangulo * alturaTriangulo;
+mientras que si se separa el codigo eso permite establecer un orden y evita repetir codigo solo llamando al metodo con
+las operaciones que se desean realizar. Esto es similar a la arquitectura presentada en clase donde la logica iba en una
+capa llamada service, los datos en otra (model), y el llamado en otra.
+Se modifico el nombre de los argumentos del record ya que c, b y h no eran lo suficientemente descriptivos para el
+usuario, razon por la cual cambio, por color, base y altura.
+El record es llevado a la parte superior de la clase con el objeto de de realizar una adecuada lectura del codigo, porque
+aunque este funciona dejandolo en la parte inferior esto podría generar confusiones ya que estarías ubicando los datos
+al final y ejecuntado los metodos que usan eson metodos al inicio, no sería una buena practica.
+
+Para la clase Facturaciom3 inicialmente se modifico a Facturacion3 ya que estaba mal escrito. Posteriormente se crearon
+dos metodos uno para sumar los precios de la factura y otro para mostrar los datos que corresponden a la factura, debido
+a una posible redundancia en el codigo ya que cada vez que se quiera mostrar los datos de la factura se deben realizar
+las siguientes lineas de codigo:
+                        double totalValorFact2 = 0;
+                        for (Double precio : factura2.precioProducto) {
+                            totalValorFact2 += precio;
+                        }
+                        System.out.println("Factura 2" );
+                        System.out.println("Cliente: " + factura2.cliente());
+                        System.out.println("Total: " + totalValorFact2);
+serían 6 lineas de codigo por cada factura creada, tan solo crear 10 facturas y visualizar sus respectivos datos por lo
+menos me generaría un codigo de 60 lineas. Por ende se divide el codigo como si estuvieran en diferentes capas, pero en
+este caso estaremmos desde la misma clase, dandole manejo con los metodos antes mencionados.
+Adicionalmente se modifico la variable fechaFactura la cual estaba definida como String y se paso a LocalDate porque
+hace referencia a una fecha, la cual fue adicionada en el metodo mostrarDatosFactura para visualizar la fecha de la misma
+
+
